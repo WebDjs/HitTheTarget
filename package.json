@@ -1,0 +1,40 @@
+{
+  "name": "hit-the-target",
+  "version": "1.0.0",
+  "description": "2d gun trajectory game",
+  "main": "index.js",
+  "scripts": {
+    "sass": "gulp sass:watch",
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sattanaso/HitTheTarget.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sattanaso/HitTheTarget/issues"
+  },
+  "homepage": "https://github.com/Sattanaso/HitTheTarget#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.3",
+    "express-session": "^1.15.3",
+    "mongodb": "^2.2.29",
+    "mongoose": "^4.10.7",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "pug": "^2.0.0-rc.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglifycss": "^1.0.8",
+    "openurl": "^1.1.1"
+  }
+}
