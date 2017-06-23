@@ -1,1 +1,3 @@
-body{text-align:center}body div{font:red;background:green}
+.canvas-container{position:relative}canvas{position:absolute}#beckground-canvas{background-color:yellowgreen}
+#header ul{float:right}main{padding:50px;background-color:whitesmoke;color:black;min-height:550px}
+#footer{background-color:black;color:whitesmoke;text-align:center;padding:2%;min-height:100px}
