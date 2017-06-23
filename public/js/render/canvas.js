@@ -1,6 +1,6 @@
 const Canvas = (() => {
 	return {
-		strokeLine: function (context, x0, y0, x, y, strokeColor) {
+		strokeLine: (context, x0, y0, x, y, strokeColor) => {
 
 			context.beginPath();
 			context.moveTo(x0, y0);
@@ -10,7 +10,7 @@ const Canvas = (() => {
 			context.closePath();
 		},
 
-		strokeTriangle: function (context, x0, y0, x1, y1, x2, y2, strokeColor) {
+		strokeTriangle: (context, x0, y0, x1, y1, x2, y2, strokeColor) => {
 
 			context.beginPath();
 			context.moveTo(x0, y0);
@@ -22,7 +22,7 @@ const Canvas = (() => {
 			context.closePath();
 		},
 
-		drawTriangle: function (context, x0, y0, x1, y1, x2, y2, fillColor, strokeColor) {
+		drawTriangle: (context, x0, y0, x1, y1, x2, y2, fillColor, strokeColor) => {
 
 			context.beginPath();
 			context.moveTo(x0, y0);
@@ -36,7 +36,7 @@ const Canvas = (() => {
 			context.closePath();
 		},
 
-		strokeRectangle: function (context, x, y, width, height, strokeColor) {
+		strokeRectangle: (context, x, y, width, height, strokeColor) => {
 
 			context.beginPath();
 			context.strokeStyle = strokeColor;
@@ -44,7 +44,7 @@ const Canvas = (() => {
 			context.closePath();
 		},
 
-		drawRectangle: function (context, x, y, width, height, fillColor, strokeColor) {
+		drawRectangle: (context, x, y, width, height, fillColor, strokeColor) => {
 
 			context.beginPath();
 			context.fillStyle = fillColor;
@@ -54,7 +54,7 @@ const Canvas = (() => {
 			context.closePath();
 		},
 
-		strokeSquare: function (context, x, y, side, strokeColor) {
+		strokeSquare: (context, x, y, side, strokeColor) => {
 
 			context.beginPath();
 			context.strokeStyle = strokeColor;
@@ -62,7 +62,7 @@ const Canvas = (() => {
 			context.closePath();
 		},
 
-		drawSquare: function (context, x, y, side, fillColor, strokeColor) {
+		drawSquare: (context, x, y, side, fillColor, strokeColor) => {
 
 			context.beginPath();
 			context.fillStyle = fillColor;
@@ -72,7 +72,7 @@ const Canvas = (() => {
 			context.closePath();
 		},
 
-		strokeCircle: function (context, x, y, radius, strokeColor) {
+		strokeCircle: (context, x, y, radius, strokeColor) => {
 
 			context.beginPath();
 			context.arc(x, y, radius, 0, 2 * Math.PI, true);
@@ -81,7 +81,7 @@ const Canvas = (() => {
 			context.closePath();
 		},
 
-		drawCircle: function (context, x, y, radius, fillColor, strokeColor) {
+		drawCircle: (context, x, y, radius, fillColor, strokeColor) => {
 
 			context.beginPath();
 			context.fillStyle = fillColor;
@@ -92,7 +92,7 @@ const Canvas = (() => {
 			context.closePath();
 		},
 
-		strokeArcBottom: function (context, x, y, radius, strokeColor) {
+		strokeArcBottom: (context, x, y, radius, strokeColor) => {
 
 			context.beginPath();
 			context.arc(x, y, radius, Math.PI, 0, true);
@@ -101,7 +101,7 @@ const Canvas = (() => {
 			context.closePath();
 		},
 
-		strokeArcTop: function (context, x, y, radius, strokeColor) {
+		strokeArcTop: (context, x, y, radius, strokeColor) => {
 
 			context.beginPath();
 			context.arc(x, y, radius, 0, Math.PI, true);
@@ -110,7 +110,7 @@ const Canvas = (() => {
 			context.closePath();
 		},
 
-		drawArcTop: function (context, x, y, radius, fillColor, strokeColor) {
+		drawArcTop: (context, x, y, radius, fillColor, strokeColor) => {
 
 			context.beginPath();
 			context.fillStyle = fillColor;
@@ -121,7 +121,7 @@ const Canvas = (() => {
 			context.closePath();
 		},
 
-		strokeArcLeft: function (context, x, y, radius, strokeColor) {
+		strokeArcLeft: (context, x, y, radius, strokeColor) => {
 
 			context.beginPath();
 			context.arc(x, y, radius, Math.PI / 2, -Math.PI / 2, true);
@@ -130,7 +130,7 @@ const Canvas = (() => {
 			context.closePath();
 		},
 
-		strokeArcRight: function (context, x, y, radius, strokeColor) {
+		strokeArcRight: (context, x, y, radius, strokeColor) => {
 
 			context.beginPath();
 			context.arc(x, y, radius, -Math.PI / 2, Math.PI / 2, true);
@@ -139,7 +139,7 @@ const Canvas = (() => {
 			context.closePath();
 		},
 
-		setLinearGradient2Colors: function (context, x, y, width, height, color0, color1) {
+		setLinearGradient2Colors: (context, x, y, width, height, color0, color1) => {
 			let grad = this.createLinearGradient(x, y, width, height);
 
 			grad.addColorStop(0, color0);
@@ -148,7 +148,7 @@ const Canvas = (() => {
 			return grad;
 		},
 
-		setLinearGradient3Colors: function (context, x, y, width, height, color0, color1, color2) {
+		setLinearGradient3Colors: (context, x, y, width, height, color0, color1, color2) => {
 			let grad = context.createLinearGradient(x, y, width, height);
 
 			grad.addColorStop(0, color0);
@@ -158,7 +158,7 @@ const Canvas = (() => {
 			return grad;
 		},
 
-		setLinearGradient4Colors: function (context, x, y, width, height, color0, color1, color2, color3) {
+		setLinearGradient4Colors: (context, x, y, width, height, color0, color1, color2, color3) => {
 			let grad = context.createLinearGradient(x, y, width, height);
 
 			grad.addColorStop(0, color0);
@@ -169,7 +169,7 @@ const Canvas = (() => {
 			return grad;
 		},
 
-		setLinearGradient5Colors: function (context, x, y, width, height, color0, color1, color2, color3, color4) {
+		setLinearGradient5Colors: (context, x, y, width, height, color0, color1, color2, color3, color4) => {
 			let grad = context.createLinearGradient(x, y, width, height);
 
 			grad.addColorStop(0, color0);
@@ -181,7 +181,7 @@ const Canvas = (() => {
 			return grad;
 		},
 
-		strokeQuadraticBezierCurve: function (ctx, xStart, yStart, xMiddle, yMiddle, xEnd, yEnd, strokeColor) {
+		strokeQuadraticBezierCurve: (ctx, xStart, yStart, xMiddle, yMiddle, xEnd, yEnd, strokeColor) => {
 
 			ctx.beginPath();
 			ctx.bezierCurveTo(xStart, yStart, xMiddle, yMiddle, xEnd, yEnd);
@@ -190,7 +190,7 @@ const Canvas = (() => {
 			ctx.closePath();
 		},
 
-		fillQuadraticBezierCurve: function (ctx, xStart, yStart, xMiddle, yMiddle, xEnd, yEnd, strokeColor) {
+		fillQuadraticBezierCurve: (ctx, xStart, yStart, xMiddle, yMiddle, xEnd, yEnd, strokeColor) => {
 
 			ctx.beginPath();
 			ctx.bezierCurveTo(xStart, yStart, xMiddle, yMiddle, xEnd, yEnd);
@@ -199,7 +199,7 @@ const Canvas = (() => {
 			ctx.closePath();
 		},
 
-		getPointOfQuadraticBezierCurve: function (percent, xStart, yStart, xMiddle, yMiddle, xEnd, yEnd) {
+		getPointOfQuadraticBezierCurve: (percent, xStart, yStart, xMiddle, yMiddle, xEnd, yEnd) => {
 
 			let pct = percent / 100,
 				xP = xStart + pct * (xMiddle - xStart),
@@ -210,7 +210,7 @@ const Canvas = (() => {
 			return point = { x: xP + pct * (xR - xP), y: yP + pct * (yR - yP) }
 		},
 
-		rotateTo: function (ctx, angleInt) {
+		contextRotateTo: (ctx, angleInt) => {
 
 			let radians = (angleInt * Math.PI) / 180;
 
