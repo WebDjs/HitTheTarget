@@ -18,5 +18,8 @@ const render = {
 	},
 	contextClear: (ctx, w, h) => {
 		ctx.clearRect(0, 0, w, h);
+	},
+	trajectory: (ctx, x0, y0, x1, y1, z0, z1) => {
+		Canvas.strokeQuadraticBezierCurve(ctx, x0, y0, x1, y1, z0, z1, "black");
 	}
 }

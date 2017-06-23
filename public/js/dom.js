@@ -9,39 +9,38 @@ const CanvasWidth = canvasBg.width;
 const CanvasHeight = canvasBg.height;
 
 // Game
-let tank = new Tank();
+const tank = new Tank();
 tank.X = 0;
 tank.Y = CanvasHeight - MagicNumber / 2;
 tank.W = MagicNumber;
 tank.H = MagicNumber / 2;
 
-let gun = new Gun();
+const gun = new Gun();
 gun.X = tank.X + MagicNumber / 2;
 gun.Y = tank.Y;
 gun.W = 2 * MagicNumber / 3;
-// angle
-gun.H = 45;
+gun.H = 45; // angle
 
-let target = new Target();
+const target = new Target();
 target.W = MagicNumber / 10;
 target.X = utils.randomBetween(CanvasWidth / 2 + target.W / 2, CanvasWidth - target.W / 2);
-target.Y = utils.randomBetween(MagicNumber / 20, CanvasHeight - target.W / 2);
+target.Y = utils.randomBetween(target.W / 2, CanvasHeight - target.W / 2);
 
-let bullet = new Bullet();
+const bullet = new Bullet();
 bullet.W = MagicNumber / 10;
 bullet.X = gun.X + utils.delta(gun.W, utils.radians(gun.H)).X;
 bullet.Y = gun.Y - utils.delta(gun.W, utils.radians(gun.H)).Y;
 
-(function gameLoop() {
+(function loop() {
 	render.tank(ctxMain, tank);
 	render.gun(ctxMain, gun);
-	render.target(ctxMain, target);
 	render.bullet(ctxMain, bullet);
+	render.target(ctxMain, target);
 
-	window.requestAnimationFrame(gameLoop);
+	window.requestAnimationFrame(loop);
 })();
 
-
+// Keyboard events
 document.addEventListener("keydown", function (e) {
 	// space and arrow keys free
 	if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
@@ -81,7 +80,7 @@ document.addEventListener("keydown", function (e) {
 			}
 			break;
 		case 32: // space - fire
-			alert("Fire");
+			render.trajectory(ctxMain, gun.X, gun.Y, gun.X + (CanvasWidth - gun.X) / 2, 0, CanvasWidth, gun.Y);
 			break;
 	}
 }, false);
