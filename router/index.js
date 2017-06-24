@@ -1,9 +1,10 @@
-const controllers = require("../controllers");
+const controller = require("../controllers");
 
-module.exports = (app, express) => {
-    app.get("/", controllers.main.home);
+module.exports = (app) => {
+    app.get("/home", controller.main.home);
+    app.get("/gallery", controller.main.gallery);
 
-    app.get("*", function (req, res) {
-        res.redirect("/");
+    app.get("*", (req, res) => {
+        res.redirect("/home");
     });
 }

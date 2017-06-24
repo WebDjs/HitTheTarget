@@ -6,7 +6,7 @@ const envParams = require("./config")[env];
 require("./config/express")(app, envParams);
 require("./config/mongoose")(envParams);
 require("./config/passport")();
-require("./router")(app, express);
+require("./router")(app);
 
 const port = envParams.port;
 
