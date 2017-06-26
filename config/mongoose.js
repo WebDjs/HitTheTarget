@@ -17,6 +17,4 @@ module.exports = (envParams) => {
 
 		console.log("Database up and running...");
 	});
-
-	return mongoose;
 };
