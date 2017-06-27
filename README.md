@@ -1,2 +1,2 @@
-# HitTheTarget
-2d gun trajectory game
+# JustMe
+Space to configurate your presentation
